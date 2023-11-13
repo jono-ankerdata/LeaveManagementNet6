@@ -1,42 +1,48 @@
-﻿@{
+﻿@inject SignInManager<Employee> SignInManager
+@using Microsoft.AspNetCore.Identity;
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <br/>
-    <h1 class="display-4">Welcome to LMS <i class="fa-solid fa-person-walking-arrow-right fa-lg" style="color: #377cd7;"></i></h1>
+    <h1 class="display-4">Welcome to Leave Management Web</h1>
     <br/>
     <h4>Your Leave Management System</h4>
     <br />
     <br />
-    <center>
-        <div class="card border-primary mb-3" style="max-width: 30rem;">
-            <div class="card-body text-primary">
-                <h5 class="card-title">Learn More</h5>
-                <br/>
-                <ul>
-                    <p>
-                        <i class="fa-solid fa-arrow-right fa-beat" style="color: #000000;"></i> &nbsp;
-                        LMS consists of a dynamic, easy to use system for employee leave allocation.
-                    </p>
-                    <br />
-                    <p>
-                        <i class="fa-solid fa-arrow-right fa-beat" style="color: #000000;"></i> &nbsp;
-                        LMS provides both admin and user accounts for comprehensive management.
+    @if (SignInManager.IsSignedIn(User) == false)
+    {
+        <center>
+            <div class="card border-primary mb-3" style="max-width: 30rem;">
 
-                    <p/>
-                    <br />
-                    <p>
-                        <i class="fa-solid fa-arrow-right fa-beat" style="color: #000000;"></i> &nbsp;
-                        Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.
-                    <p/>
-                    <br />
-                    <p>
-                        <i class="fa-solid fa-arrow-right fa-beat" style="color: #000000;"></i> &nbsp;
-                        Login or Register Now!
-                    </p>
-                <ul/>
+                <div class="card-body text-primary">
+                    <h5 class="card-title">Learn More</h5>
+                    <br/>
+                    <ul>
+                        <p>
+                            <i class="fa-solid fa-arrow-right fa-beat" style="color: #000000;"></i> &nbsp;
+                            LMS consists of a dynamic, easy to use system for employee leave allocation.
+                        </p>
+                        <br />
+                        <p>
+                            <i class="fa-solid fa-arrow-right fa-beat" style="color: #000000;"></i> &nbsp;
+                            LMS provides both admin and user accounts for comprehensive management.
+
+                        <p />
+                        <br />
+                        <p>
+                            <i class="fa-solid fa-arrow-right fa-beat" style="color: #000000;"></i> &nbsp;
+                            Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.
+                        <p />
+                        <br />
+                        <p>
+                            <i class="fa-solid fa-arrow-right fa-beat" style="color: #000000;"></i> &nbsp;
+                            Login or Register Now!
+                        </p>
+                    <ul />
+                </div>
             </div>
-        </div>
-    </center>
+        </center>
+    }
 </div>
