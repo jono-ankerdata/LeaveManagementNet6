@@ -172,15 +172,18 @@
                         </li>
                         @if (User.IsInRole(Roles.User))
                         {
-                            <li class="sidebar-item">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link" asp-controller="LeaveRequests" asp-action="Create">
-                                    <i class="mdi mdi-view-dashboard"></i><span class="hide-menu"><i class="fas fa-home"></i> &nbsp; Apply For Leave</span>
-                                </a>
-                            </li>
 
                             <li class="sidebar-item">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link" asp-controller="LeaveRequests" asp-action="MyLeave">
-                                    <i class="mdi mdi-view-dashboard"></i><span class="hide-menu"><i class="fa-solid fa-person-walking-arrow-right"></i> &nbsp; My Leave</span>
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" asp-area="" asp-controller="LeaveRequests" asp-action="Create">
+                                    <i class=" fa-regular fa-pen-to-square"></i>
+                                    <span>&nbsp; Apply For Leave</span>
+                                </a>
+                            </li>
+                            
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" asp-area="" asp-controller="LeaveRequests" asp-action="MyLeave">
+                                    <i class="fa-solid fa-person-walking-arrow-right"></i>
+                                    <span>&nbsp; My Leave</span>
                                 </a>
                             </li>
                         }
